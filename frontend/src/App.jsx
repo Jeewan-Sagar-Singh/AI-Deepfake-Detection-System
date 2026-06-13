@@ -50,6 +50,7 @@ function App() {
           <p>Filename: {result.filename}</p>
           <p>Height: {result.height}</p>
           <p>Width: {result.width}</p>
+          <p>Faces Detected: {result.faces_detected}</p>
           <p>Prediction: {result.prediction}</p>
           <p>Confidence: {result.confidence}</p>
         </div>
