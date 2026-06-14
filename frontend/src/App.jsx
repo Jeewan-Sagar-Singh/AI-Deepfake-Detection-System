@@ -1,10 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
+import "./App.css";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
-
+  const navigate = useNavigate();
   const handleUpload = async () => {
     if (!file) {
       alert("Please select an image");
@@ -20,7 +22,12 @@ function App() {
         formData
       );
 
-      setResult(response.data);
+      navigate("/result", {
+        state: {
+          result: response.data,
+          imageUrl: URL.createObjectURL(file)
+        }
+      });
     } catch (error) {
       console.error(error);
       alert("Upload Failed");
@@ -28,33 +35,77 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>DeepFake Detection System</h1>
+    <div className="container">
 
-      <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => setFile(e.target.files[0])}
-      />
+      <h1 className="title">
+        Welcome to Jeewan Sagar Singh
+        <br />
+        Deep Fake Detection Model
+      </h1>
 
-      <br /><br />
+      <p className="subtitle">
+        AI Powered Image & Video DeepFake Detection System
+      </p>
+
+      <div className="upload-section">
+
+  <label className="upload-box">
+
+    <h2>📷 IMAGE</h2>
+
+    <p>Click To Upload Image</p>
+
+    <input
+      type="file"
+      accept="image/*"
+      style={{ display: "none" }}
+      onChange={(e) => setFile(e.target.files[0])}
+    />
+
+  </label>
+
+  <label className="upload-box">
+
+    <h2>🎥 VIDEO</h2>
+
+    <p>Click To Upload Video</p>
+
+    <input
+      type="file"
+      accept="video/*"
+      style={{ display: "none" }}
+    />
+
+  </label>
+
+</div>
+
+      <br />
 
       <button onClick={handleUpload}>
         Detect DeepFake
       </button>
 
       {result && (
-        <div>
-          <h2>Result</h2>
+  <div className="result-card">
 
-          <p>Filename: {result.filename}</p>
-          <p>Height: {result.height}</p>
-          <p>Width: {result.width}</p>
-          <p>Faces Detected: {result.faces_detected}</p>
-          <p>Prediction: {result.prediction}</p>
-          <p>Confidence: {result.confidence}</p>
-        </div>
-      )}
+    <h2>🔍 Detection Result</h2>
+
+    <p><strong>Filename:</strong> {result.filename}</p>
+
+    <p><strong>Height:</strong> {result.height}</p>
+
+    <p><strong>Width:</strong> {result.width}</p>
+
+    <p><strong>Faces Detected:</strong> {result.faces_detected}</p>
+
+    <p><strong>Prediction:</strong> {result.prediction}</p>
+
+    <p><strong>Confidence:</strong> {result.confidence}</p>
+
+  </div>
+)}
+
     </div>
   );
 }

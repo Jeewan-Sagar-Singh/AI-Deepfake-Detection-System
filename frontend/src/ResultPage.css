@@ -1,0 +1,41 @@
+.result-container {
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.result-card {
+  width: 500px;
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 30px rgba(0,255,255,0.25);
+}
+
+.result-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.fake-badge {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  background: #ef4444;
+  box-shadow: 0 0 20px #ef4444;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+}
