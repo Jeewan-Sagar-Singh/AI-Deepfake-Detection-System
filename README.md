@@ -108,4 +108,4 @@ Prediction & Confidence Score
 
 **Jeewan Sagar Singh**
 
-Computer Vision | AIML Enthausist| Python Developer
+Computer Vision | AIML Enthausist | Python Developer
