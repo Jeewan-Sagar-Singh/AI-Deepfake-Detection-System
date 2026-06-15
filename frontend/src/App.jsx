@@ -18,7 +18,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "https://jeewan-sagar-singh-deepfake-detection-system.onrender.com/predict-image",
+        "https://ai-deepfake-detection-system-1nnx.onrender.com/predict-image",
         formData
       );
 
