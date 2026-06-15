@@ -1,5 +1,7 @@
 # 🛡️ AI Deepfake Detection System
 
+> 🌐 Live Demo: https://jeewan-sagar-singh-deepfake-detection-system.vercel.app/
+
 A Computer Vision and Deep Learning based system for detecting manipulated facial images and identifying potential deepfakes using a custom-trained ResNet18 model.
 
 ---
@@ -100,7 +102,7 @@ Prediction & Confidence Score
 * AI Generated Image Detection
 * Larger Training Dataset
 * Model Optimization
-* Cloud Deployment
+
 
 ---
 
